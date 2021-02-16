@@ -3,94 +3,60 @@ import {
   CodeSurferColumns,
   Step,
 } from "code-surfer";
+import {Split} from "mdx-deck";
 import { github, vsDark } from "@code-surfer/themes";
+import image from "./imgs/38.jpg"
+import study from "./imgs/study.png"
 
 export const theme = vsDark;
 
-# Hello 👋
+# const TypeScript:string = "Hello 👋"
 
-You are using [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us)
+TypeScript Basics & Beyond
+
+---
+## A little word on what this talk is about
+<p style={{padding:"0px 300px"}}>
+This talk covers some of the advantanges of using TypeScript and also demonstrates how developers can get enhanced
+development experience when using TypeScript, your code however be it in TypeScript or Javascript, should always be
+properly backed by unit testing and where-ever applicable with integration and end-to-end tests.
+
+TypeScript is not about developing bugfree, but it enhances the development experience by highligting some possible code issues and providing
+some intelligent features
+</p>
+
+---
+## What is TypeScript
+<p style={{padding:"0px 300px"}}>
+Its an OpenSource compile to JavaScript language, it works by adding static and computed type definitions on top of JavaScript,
+any valid JavaScript is also a valid TypeScript
+
+- Developed by __Anders Hejlsberg__ (also created C# , Delphi and Turbo Pascal)
+
+- First version was release in October 2012
+
+- Open Sourced in 2014 (although code was avalable in 2012 but one could not contribute)
+
+</p>
 
 ---
 
 <CodeSurfer>
 
-```js title="This is a title" subtitle="and this a subtitle"
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
 
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
+```js title="this JavaScript"
 
-  if (!sit || ut < 1) {
-    return [];
+  function Multiply(a,b){
+    return a * b;
   }
 
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
 ```
 
-```js
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
+```ts title="becomes this TypeScript"
 
-function adipiscing(...elit) {
-  if (!elit.sit) {
-    return [];
+  function Multiply(a:number,b:number): number{
+    return a * b;
   }
-
-  const sed = elit[0];
-  return eiusmod.tempor(sed) ? sed : [sed];
-}
-
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-
-  if (!sit || ut < 1) {
-    return [];
-  }
-
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
-```
-
-```diff 1[10:14],2[15:19],3[22:27],10:12
 
 ```
 
@@ -98,49 +64,19 @@ function incididunt(ipsum, ut = 1) {
 
 ---
 
-<CodeSurferColumns themes={[vsDark, github]}>
+<CodeSurferColumns themes={{vsDark, github}}>
 
 <Step>
 
-```js
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
+```ts subtitle="TypeScript"
+
+  function Multiply(a:number, b:number): number {
+    return a * b;
+  }
+
 ```
 
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
-```
-
-</Step>
-
-<Step>
-
-```js
-const lorem = (ipsum, dolor, sit) => {
-  const amet = dolor - ipsum;
-  return consectetur.adipiscing(
-    {
-      elit: sed.eiusmod(sit - dolor) / amet + 2,
-    },
-    (tempor, incididunt) => ipsum + amet * incididunt
-  );
-};
-
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
-```
-
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
-
-const sed = (eiusmod, tempor, incididunt) => {
-  const ut = tempor - eiusmod;
-  return labore.et(
-    {
-      amet: dolore.magna(incididunt - tempor) / ut + 2,
-    },
-    (aliqua, elit) => eiusmod + ut * elit
-  );
-};
-```
+_function Multiply_ accepts 2 parameters, both __numbers__ and returns a __number__
 
 </Step>
 
@@ -148,5 +84,181 @@ const sed = (eiusmod, tempor, incididunt) => {
 
 ---
 
-docs:  
-[codesurfer.pomb.us](https://codesurfer.pomb.us)
+# What is a type?
+<p style={{padding:"0px 300px"}}>
+
+- a _type_ is metadata for a declared variable/attribute and it tells the compiler to treat as such
+    - number, boolean, string etc.
+
+- a type also narrows down on what could be assigned to that variable, like a _string_ cannot be assigned to _number_
+
+</p>
+
+---
+<Split>
+
+  <img src={image}/>
+
+<p style={{"text-align":"left","padding":"20px 20px"}}>
+    Airbnb migrated their codebase to TypeScript in 2019, when they tried to replicate the bugs
+    they had encountered previously, they found out that 38% of those bugs could be mitigated
+    just by TypeScript conversion
+</p>
+
+</Split>
+
+---
+
+<Split>
+
+<img src={study}/>
+
+<p style={{"text-align":"left","padding":"20px 20px"}}>
+  An independant study has found that 15% of the bugs in famous OpenSource repositories were easily
+  found out by TypeScript conversion.
+</p>
+
+</Split>
+
+---
+
+# Lets start with some types
+
+---
+
+## Basic types and some special ones
+
+In TypeScript _null_ and _undefined_ are also treates as a __type__ and it introduces
+some new types _any_, _unknown_ and _never_
+
+---
+
+## Complex, Optional and Enum Types
+
+A type with mutiple properties is referred as _complex type_ here, any type can have Optional
+properties  which is marked by _?_
+
+A type can be declared as a literal as well
+
+
+---
+
+<CodeSurfer>
+
+```ts title="Optional & Literal types"
+
+export type DebitCard = {
+  cardNumber: string;
+  cardExpiry?: string; // optional type
+  cardType: "Debit";  // this is a  literal type
+  cancelled: boolean;
+};
+
+
+```
+
+</CodeSurfer>
+
+---
+
+
+# Intesection, Literal, Union & Discriminated Union types
+
+---
+
+<CodeSurfer>
+
+```ts title="Index Types"
+type Vehicle = {
+  make: string
+  model: string
+  year?: string
+
+}
+
+type UserVehicles = {
+  [key: string] : Vehicle
+}
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```ts title="keyOf"
+
+type Vehicle = {
+  make: string
+  model: string
+  year?: string
+
+}
+
+type VehicleProps = keyOf Vehicle;
+// "make" | "model" | "year"
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```ts title="Mapped types"
+
+type Vehicle = {
+  make: string
+  model: string
+  year?: string
+
+}
+
+// Mapped
+type Required<T> = {[P in keyOf T]-?: T[P]}
+
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```ts title="Template Literals"
+
+type Fade = "fade"
+type InOut = "In" | "Out"
+
+// Template Literal
+type Animation = `${Fade}${InOut}`
+
+// fadeIn | fadeOut
+
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```ts title="infer keyword"
+
+type ComponentType<T> = T extends (args: infer arg)=> infer _Result ? arg : never;
+
+
+```
+
+</CodeSurfer>
+
+---
+
+## Mashup of types
+
+---
+
