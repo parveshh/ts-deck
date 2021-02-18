@@ -40,6 +40,17 @@ any valid JavaScript is also a valid TypeScript
 </p>
 
 ---
+# What is a type?
+<p style={{padding:"0px 300px"}}>
+
+- a _type_ is metadata for a declared variable/attribute and it tells the compiler to treat as such
+    - number, boolean, string etc.
+
+- a type also narrows down on what could be assigned to that variable, like a _string_ cannot be assigned to _number_
+
+</p>
+
+---
 
 <CodeSurfer>
 
@@ -62,8 +73,8 @@ any valid JavaScript is also a valid TypeScript
 
 </CodeSurfer>
 
----
 
+---
 <CodeSurferColumns themes={{vsDark, github}}>
 
 <Step>
@@ -84,20 +95,12 @@ _function Multiply_ accepts 2 parameters, both __numbers__ and returns a __numbe
 
 ---
 
-# What is a type?
-<p style={{padding:"0px 300px"}}>
-
-- a _type_ is metadata for a declared variable/attribute and it tells the compiler to treat as such
-    - number, boolean, string etc.
-
-- a type also narrows down on what could be assigned to that variable, like a _string_ cannot be assigned to _number_
-
-</p>
+# Any stats on the benefits?
 
 ---
 <Split>
 
-  <img src={image}/>
+<img src={image}/>
 
 <p style={{"text-align":"left","padding":"20px 20px"}}>
     Airbnb migrated their codebase to TypeScript in 2019, when they tried to replicate the bugs
@@ -128,8 +131,8 @@ _function Multiply_ accepts 2 parameters, both __numbers__ and returns a __numbe
 
 ## Basic types and some special ones
 
-In TypeScript _null_ and _undefined_ are also treates as a __type__ and it introduces
-some new types _any_, _unknown_ and _never_
+In TypeScript _null_ is also treated as a __type__ and it introduces
+some new types like _any_, _unknown_ and _never_ etc.
 
 ---
 
@@ -258,7 +261,7 @@ type ComponentType<T> = T extends (args: infer arg)=> infer _Result ? arg : neve
 
 ---
 
-## Mashup of types
+## Mashup of types is TypeScript
 
 ---
 
